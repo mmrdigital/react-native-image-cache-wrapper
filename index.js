@@ -308,7 +308,7 @@ async function _saveCacheFile(url: string, success: Function, failure: Function)
                             success && success(cacheFile);
                         })
                         .catch(async (error) => {
-                            throw error;
+                            failure && failure(error);
                         });
                 })
                 .catch(async (error) => {
